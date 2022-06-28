@@ -19,4 +19,3 @@ Then, we can open http://localhost:8091/ to see our application.
 ### Reference
 1. https://medium.com/@marvels0098/how-to-include-reactjs-app-in-docker-container-2e73068ce2d5
 2. https://learningsky.io/use-docker-to-create-react-development-environment/
-3. https://github.com/HcwXd/docker-tutorial
