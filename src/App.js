@@ -3,6 +3,14 @@ import './App.css';
 import GoogleLogin from "react-google-login";
 
 function App() {
+  const search = window.location.search;
+  const params = new URLSearchParams(search);
+  const token = params.get('flag');
+  console.log(token);
+  if(token === 'success') {
+    alert('success')
+  }
+
   return(
     <div className="container">
      <div className="form-box">
@@ -53,12 +61,15 @@ function App() {
  );
 }
 
-function getFailure() {
+function getFailure(response) {
   console.log('getFailure');
+  console.log(response);
 }
 
 function onSignIn(response) {
+  console.log('onSignIn');
   console.log(response);
+  alert(response)
 }
 
 export default App;
