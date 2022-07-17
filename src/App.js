@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import GoogleLogin from "react-google-login";
 
 function App() {
   return(
@@ -36,12 +37,28 @@ function App() {
         <div className="social">
           <a href="#"><i className="fab fa-facebook"></i></a>
           <a href="#"><i className="fab fa-twitter-square"></i></a>
-          <a href="#"><i className="fab fa-google"></i></a>
+          <GoogleLogin
+              style={{marginTop: 0}}
+              clientId="861471582134-rssa6aa8hl6s31a5effldrgqd5pkb1qv.apps.googleusercontent.com"
+              buttonText="Google 登入"
+              onSuccess={onSignIn}
+              onFailure={getFailure}
+              cookiePolicy={'single_host_origin'}
+            />
+          {/* <i className="fab fa-google"></i>   */}
         </div>
       </div>
     </div>
     </div>   
  );
+}
+
+function getFailure() {
+  console.log('getFailure');
+}
+
+function onSignIn(response) {
+  console.log(response);
 }
 
 export default App;
