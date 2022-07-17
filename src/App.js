@@ -1,6 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import GoogleLogin from "react-google-login";
+import { gapi } from "gapi-script";
+
+gapi.load("client:auth2", () => {
+  gapi.client.init({
+    clientId: "861471582134-rssa6aa8hl6s31a5effldrgqd5pkb1qv.apps.googleusercontent.com",
+    plugin_name: "chat",
+  });
+});
 
 function App() {
   const search = window.location.search;
